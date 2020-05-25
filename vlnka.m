@@ -79,37 +79,37 @@ fntsz=14;
 
 figure('Position',[100 300 800 600])
 plot(zi,abs(PSI1D).^2);
-title('$\psi(0,-,z)$ Osova relativni intenzita pro f='+compose("%.0g",f)+', a='+compose("%.0g",a)+', k='+compose("%.0g",k),'fontsize',fntsz,'Interpreter','latex')
+title('$\psi(0,-,z)$ Osova relativni intenzita pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 
 figure('Position',[100 300 800 600])
 plot(zi,angle(PSI1D));
-title('$\psi(0,-,z)$ Osova faze pro f='+compose("%.0g",f)+', a='+compose("%.0g",a)+', k='+compose("%.0g",k),'fontsize',fntsz,'Interpreter','latex')
+title('$\psi(0,-,z)$ Osova faze pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 
 figure('Position',[100 300 800 600])
 plot(x,abs(PSIAXZ).^2);
-title('$\psi(0,-,z)$ Rez relativni intenzity ve smeru osy $z$ pro $\rho=0$ pro f='+compose("%.0g",f)+', a='+compose("%.0g",a)+', k='+compose("%.0g",k),'fontsize',fntsz,'Interpreter','latex')
+title('$\psi(0,-,z)$ Rez relativni intenzity ve smeru osy $z$ pro $\rho=0$ pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 
 figure('Position',[100 300 800 600])
 plot(x,angle(PSIAXZ));
-title('$\psi(0,-,z)$ Rez faze ve smeru osy $z$ pro $\rho=0$ pro f='+compose("%.0g",f)+', a='+compose("%.0g",a)+', k='+compose("%.0g",k),'fontsize',fntsz,'Interpreter','latex')
+title('$\psi(0,-,z)$ Rez faze ve smeru osy $z$ pro $\rho=0$ pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 
 figure('Position',[100 300 800 600])
 plot(y,abs(PSIAXR).^2);
-title('$\psi(\rho,-,f)$ Rez relativni intenzity ve smeru osy $\rho$ pro $z=f$ pro f='+compose("%.0g",f)+', a='+compose("%.0g",a)+', k='+compose("%.0g",k),'fontsize',fntsz,'Interpreter','latex')
+title('$\psi(\rho,-,f)$ Rez relativni intenzity ve smeru osy $\rho$ pro $z=f$ pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$\rho$[mm]','Interpreter','latex')
 
 figure('Position',[100 300 800 600])
 plot(y,angle(PSIAXR));
-title('$\psi(\rho,-,f)$ Rez faze ve smeru osy $\rho$ pro $z=f$ pro f='+compose("%.0g",f)+', a='+compose("%.0g",a)+', k='+compose("%.0g",k),'fontsize',fntsz,'Interpreter','latex')
+title('$\psi(\rho,-,f)$ Rez faze ve smeru osy $\rho$ pro $z=f$ pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$\rho$[mm]','Interpreter','latex')
 
 figure('Position',[100 300 800 600])
 contour(X,Y,abs(PSI).^2,[0,0.001,0.002,0.003,0.005,0.01,0.02,0.03,0.05,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1],'ShowText','on');
-title('$\psi(\rho,-,z)$ Relativni intenzita pro f='+compose("%.0g",f)+', a='+compose("%.0g",a)+', k='+compose("%.0g",k),'fontsize',fntsz,'Interpreter','latex')
+title('$\psi(\rho,-,z)$ Relativni intenzita pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 ylabel('$\rho$[mm]','Interpreter','latex')
 colormap jet
@@ -117,7 +117,7 @@ colorbar
 
 figure('Position',[100 300 800 600])
 contour(X,Y,angle(PSI),20);
-title('$\psi(\rho,-,z)$ Faze pro f='+compose("%.0g",f)+', a='+compose("%.0g",a)+', k='+compose("%.0g",k),'fontsize',fntsz,'Interpreter','latex')
+title('$\psi(\rho,-,z)$ Faze pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 ylabel('$\rho$[mm]','Interpreter','latex')
 colormap jet
@@ -125,7 +125,7 @@ colorbar
 
 figure('Position',[100 300 800 600])
 contourf(X,Y,abs(PSI).^2,100,'LineColor','none');
-title('$\psi(\rho,-,z)$ Relativni intenzita pro f='+compose("%.0g",f)+', a='+compose("%.0g",a)+', k='+compose("%.0g",k),'fontsize',fntsz,'Interpreter','latex')
+title('$\psi(\rho,-,z)$ Relativni intenzita pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 ylabel('$\rho$[mm]','Interpreter','latex')
 colormap jet
@@ -133,7 +133,7 @@ colorbar
 
 figure('Position',[100 300 800 600])
 surfc(X,Y,abs(PSI).^2)
-title('$\psi(\rho,-,z)$ Relativni intenzita pro f='+compose("%.0g",f)+', a='+compose("%.0g",a)+', k='+compose("%.0g",k),'fontsize',fntsz,'Interpreter','latex')
+title('$\psi(\rho,-,z)$ Relativni intenzita pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 ylabel('$\rho$[mm]','Interpreter','latex')
 colormap jet
@@ -143,7 +143,7 @@ axis tight
 
 figure('Position',[100 300 800 600])
 contourf(X,Y,angle(PSI),100,'LineColor','none');
-title('$\psi(\rho,-,z)$ Faze pro f='+compose("%.0g",f)+', a='+compose("%.0g",a)+', k='+compose("%.0g",k),'fontsize',fntsz,'Interpreter','latex')
+title('$\psi(\rho,-,z)$ Faze pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 ylabel('$\rho$[mm]','Interpreter','latex')
 colormap jet
