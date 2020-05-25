@@ -10,7 +10,7 @@ dz=3*10^(-4);
 drho=1.5*10^(-5);
 
 N1D=1001;
-N=1001;
+N=51;
 
 PSI1D=zeros(N1D);
 PSI=zeros(N,N);
@@ -71,34 +71,36 @@ fprintf('maxim=%d\n',maxim);
 fprintf('rho0idx=%d\n',rho0idx);
 fprintf('zfidx=%d\n',zfidx);
 
+%$\psi(rho,phi,z)$
+
 figure('Position',[100 300 800 600])
 plot(zi,abs(PSI1D).^2);
-title('$\psi(0,-,z)$ Osov? Intenzita','Interpreter','latex')
+title('$\psi(0,-,z)$ Osova intenzita','Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 
 figure('Position',[100 300 800 600])
 plot(zi,angle(PSI1D));
-title('$\psi(0,-,z)$ Osov? F?ze','Interpreter','latex')
+title('$\psi(0,-,z)$ Osova faze','Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 
 figure('Position',[100 300 800 600])
 plot(x,abs(PSIAXZ).^2);
-title('$\psi(0,-,z)$ Intenzita z-Osov? cut','Interpreter','latex')
+title('$\psi(0,-,z)$ Rez intenzity ve smeru osy $z$','Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 
 figure('Position',[100 300 800 600])
 plot(x,angle(PSIAXZ));
-title('$\psi(0,-,z)$ F?ze z-Osov? cut','Interpreter','latex')
+title('$\psi(0,-,z)$ Rez faze ve smeru osy $z$','Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 
 figure('Position',[100 300 800 600])
 plot(y,abs(PSIAXR).^2);
-title('$\psi(\rho,-,f)$ Intenzita $\rho$-Osov? cut','Interpreter','latex')
+title('$\psi(\rho,-,f)$ Rez intenzity ve smeru osy $\rho$','Interpreter','latex')
 xlabel('$\rho$[mm]','Interpreter','latex')
 
 figure('Position',[100 300 800 600])
 plot(y,angle(PSIAXR));
-title('$\psi(\rho,-,f)$ F?ze $\rho$-Osov? cut','Interpreter','latex')
+title('$\psi(\rho,-,f)$ Rez faze ve smeru osy $\rho$','Interpreter','latex')
 xlabel('$\rho$[mm]','Interpreter','latex')
 
 figure('Position',[100 300 800 600])
@@ -111,7 +113,7 @@ colorbar
 
 figure('Position',[100 300 800 600])
 contour(X,Y,angle(PSI),20);
-title('$\psi(\rho,-,z)$ F?ze','Interpreter','latex')
+title('$\psi(\rho,-,z)$ Faze','Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 ylabel('$\rho$[mm]','Interpreter','latex')
 colormap jet
@@ -137,7 +139,7 @@ axis tight
 
 figure('Position',[100 300 800 600])
 contourf(X,Y,angle(PSI),100,'LineColor','none');
-title('$\psi(\rho,-,z)$ F?ze','Interpreter','latex')
+title('$\psi(\rho,-,z)$ Faze','Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
 ylabel('$\rho$[mm]','Interpreter','latex')
 colormap jet
