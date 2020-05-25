@@ -1,4 +1,4 @@
-# Converging Wave Function
+# Focused Wave Function
 Numerical double integration and Wave Function 1D/2D/3D plotting 
 
 ![alt text](https://raw.githubusercontent.com/zdenyhraz/Converging-Wave-Function/master/pics/f10cm/2.png "1")
