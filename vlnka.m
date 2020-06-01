@@ -4,13 +4,12 @@ clc;
 
 %============================ SET ============================
 k=1*10^7;%1*10^7
-f=1*10^(-1);%1*10^(-1)
+f=0.25*10^(-1);%1*10^(-1)
 a=1*10^(-2);%1*10^(-2)
-dz=5*10^(-4);%3*10^(-4)
-dz1D=5*10^(-4);
-drho=1.5*10^(-5);%1.5*10^(-5)
+dz=0.3*10^(-4);%3*10^(-4)
+drho=1.0*10^(-5);%1.5*10^(-5)
 
-N=101;
+N=201;
 PSI=zeros(N,N);
 
 N1D=1001;
@@ -33,7 +32,7 @@ end
 %============================ 1D ============================
 
 for it=1:N1D
-    z=f-dz1D+(it-1)/(N1D-1)*2*dz1D;
+    z=f-dz+(it-1)/(N1D-1)*2*dz;
     zi(it)=1000*(z-f);%[mm]
     
     S1D1(it)=1/(-i*k/2*(a/f)^2*(1-3/4*(a/f)^2+5/8*(a/f)^4-35/64*(a/f)^6));
@@ -85,19 +84,23 @@ figure('Position',[100 300 800 600])
 plot(zi,INTENSITY1D);
 title('$\psi(0,-,z)$ Osova relativni intenzita pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
-xlim([-1000*dz1D,1000*dz1D])
+xlim([-1000*dz,1000*dz])
+ylim([0,1])
 
 %rez podel z
 figure('Position',[100 300 800 600])
 plot(x,INTENSITYAXZ);
 title('$\psi(0,-,z)$ Rez relativni intenzity ve smeru osy $z$ pro $\rho=0$ pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
+xlim([-1000*dz,1000*dz])
+ylim([0,1])
 
 %rez podel z zoom
 figure('Position',[100 300 800 600])
 plot(x,INTENSITYAXZ);
 title('$\psi(0,-,z)$ Rez relativni intenzity ve smeru osy $z$ pro $\rho=0$ pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$z-f$[mm]','Interpreter','latex')
+xlim([-1000*dz,1000*dz])
 ylim([0,0.1])
 
 %rez podel rho
@@ -105,12 +108,15 @@ figure('Position',[100 300 800 600])
 plot(y,INTENSITYAXR);
 title('$\psi(\rho,-,f)$ Rez relativni intenzity ve smeru osy $\rho$ pro $z=f$ pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$\rho$[mm]','Interpreter','latex')
+xlim([-1000*drho,1000*drho])
+ylim([0,1])
 
 %rez podel rho zoom
 figure('Position',[100 300 800 600])
 plot(y,INTENSITYAXR);
 title('$\psi(\rho,-,f)$ Rez relativni intenzity ve smeru osy $\rho$ pro $z=f$ pro f='+compose("%.2g",f)+', a='+compose("%.2g",a)+', k='+compose("%.2g",k),'fontsize',fntsz,'Interpreter','latex')
 xlabel('$\rho$[mm]','Interpreter','latex')
+xlim([-1000*drho,1000*drho])
 ylim([0,0.05])
 
 %contour intensity
